@@ -38,7 +38,7 @@ public class Vehicle implements IMileageEfficiency {
 
     // toString
     public String toString(){
-        return "";
+        return "[S/N: " + this.serialNumber + "] [Made: " + this.made + "] [Modle: " + this.model + "] ";
     }
     
     @Override
