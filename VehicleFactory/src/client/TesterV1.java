@@ -1,6 +1,7 @@
 package client;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import bus.ElectricVehicle;
 import bus.GasVehicle;
@@ -25,6 +26,13 @@ public class TesterV1 {
 		electricVehicle.setModel("Bumblebee");
 		vehicleList.add(electricVehicle);
 
+		Scanner inputScanner = new Scanner(System.in);
+		String userInput = "";
+		System.out.println("\nSearch by S/N");
+		System.out.println("Input your S/N");
+		userInput = inputScanner.nextLine();
+		
+
 		for(Vehicle element : vehicleList){
 			if(element instanceof GasVehicle){
 				System.out.println(element + "[Fuel Consumption: " + ((GasVehicle)element).getMilesPerGallon() + "]");
@@ -32,6 +40,8 @@ public class TesterV1 {
 				System.out.println(element + "[Fuel Consumption: " + ((ElectricVehicle)element).getMilesPerGallon() + "]");
 			}
 		}
+
+		inputScanner.close();
 	}
 
 }
