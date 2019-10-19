@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import bus.ElectricVehicle;
 import bus.GasVehicle;
+import bus.Validator;
 import bus.Vehicle;
 
 public class TesterV1 {
@@ -31,6 +32,10 @@ public class TesterV1 {
 		System.out.println("\nSearch by S/N");
 		System.out.println("Input your S/N");
 		userInput = inputScanner.nextLine();
+		Validator validator = new Validator();
+		validator.stringValidate(userInput, vehicleList);
+
+		
 		
 
 		for(Vehicle element : vehicleList){
@@ -43,5 +48,4 @@ public class TesterV1 {
 
 		inputScanner.close();
 	}
-
 }
