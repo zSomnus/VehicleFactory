@@ -9,6 +9,12 @@ public class Vehicle implements IMileageEfficiency {
     public Vehicle(){
 
     }
+
+    public Vehicle(String sn, String made, String model){
+        this.serialNumber = sn;
+        this.made = made;
+        this.model = model;
+    }
     
     public void makeTrip(){
 
