@@ -5,15 +5,22 @@ public class Vehicle implements IMileageEfficiency {
     private String made;
     private String model;
     protected float tripCounter;
+    private ColorEnum color;
+
 
     public Vehicle(){
-
+        this.serialNumber = "";
+        this.made = "";
+        this.model = "";
+        this.tripCounter = 0;
+        this.color = ColorEnum.Unknown;
     }
 
-    public Vehicle(String sn, String made, String model){
+    public Vehicle(String sn, String made, String model, ColorEnum color){
         this.serialNumber = sn;
         this.made = made;
         this.model = model;
+        this.color = color;
     }
     
     public void makeTrip(){
@@ -42,9 +49,16 @@ public class Vehicle implements IMileageEfficiency {
         this.model = value;
     }
 
+    public ColorEnum getColor(){
+        return this.color;
+    }
+    public void setColor(ColorEnum color){
+        this.color = color;
+    }
+
     // toString
     public String toString(){
-        return "[S/N: " + this.serialNumber + "] [Made: " + this.made + "] [Modle: " + this.model + "] ";
+        return "[S/N: " + this.serialNumber + "] [Made: " + this.made + "] [Modle: " + this.model + "] [Color: " + this.color + "] ";
     }
     
     @Override
