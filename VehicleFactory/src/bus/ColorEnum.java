@@ -1,8 +1,8 @@
 package bus;
 
 public enum ColorEnum{
-    White,
     Black,
+    White,
     Red,
     Unknown
 }

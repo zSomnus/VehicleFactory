@@ -40,10 +40,40 @@ public class TesterV1 {
 				System.out.println(element + "[Fuel Consumption: " + ((ElectricVehicle)element).getMilesPerGallon() + "]");
 			}
 		}
-
-		// Add vehicle
+		
 		Scanner inputScanner = new Scanner(System.in);
 		String userInput = "";
+		// Add vehicle
+		System.out.println("Choose vehicle type");
+		System.out.println(" 1. Gas vehicle");
+		System.out.println(" 2. Electric vehicle");
+		userInput = inputScanner.nextLine();
+		while(true){
+			if(userInput.equals("1")){
+				GasVehicle gasVehicle2 = new GasVehicle();
+				System.out.println("Input S/N:");
+				userInput = inputScanner.nextLine();
+				gasVehicle2.setSerialNumber(userInput);
+
+				System.out.println("Input Made:");
+				userInput = inputScanner.nextLine();
+				gasVehicle2.setMade(userInput);
+
+				
+				
+				System.out.println("Input ");
+
+				break;
+			}else if(userInput.equals("2")){
+				break;
+			}else{
+				System.out.println("Input invalid, please try again.");
+			}
+		}
+
+
+
+		// Search vehicle
 		System.out.println("\nSearch by S/N");
 
 		while(true){
@@ -64,6 +94,7 @@ public class TesterV1 {
 		System.out.println(vehicleList.get(index));
 		System.out.println();
 
+		// Remove vehicle
 		System.out.println("\nRemove");
 		while(true){
 			System.out.println("Input your S/N:");
