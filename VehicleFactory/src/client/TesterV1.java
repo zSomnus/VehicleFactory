@@ -11,9 +11,13 @@ import bus.SNComparator;
 import bus.Validator;
 import bus.Vehicle;
 
-public class TesterV1 {
+import java.io.FileInputStream; import java.io.FileOutputStream; import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream; import java.io.IOException;
 
-	public static void main(String[] args) {
+public class TesterV1 {
+	@SuppressWarnings("unchecked")
+
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		// Initial vehicle list
 		ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
 		GasVehicle gasVehicle = new GasVehicle();
@@ -122,6 +126,28 @@ public class TesterV1 {
 			}
 		}
 
+		ArrayList<Vehicle> listFromConsole = vehicleList;
+		ArrayList<Vehicle> listFromFile = vehicleList;
+
+		FileOutputStream fos = new FileOutputStream("vehicles.ser");
+		ObjectOutputStream oos = new ObjectOutputStream(fos);		
+		oos.writeObject(listFromConsole);
+		
+		//Read from Serialized file(persons.ser)
+		FileInputStream fis = new FileInputStream("vehicles.ser");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		
+		listFromFile =    (ArrayList<Vehicle>) ois.readObject();
+		
+		System.out.println(listFromFile);
+		System.out.println("\n .....Data from File....");
+		for(Vehicle record : listFromFile)
+		{
+			System.out.println(record);			
+		}
+
 		inputScanner.close();
+		oos.close();
+		ois.close();
 	}
 }

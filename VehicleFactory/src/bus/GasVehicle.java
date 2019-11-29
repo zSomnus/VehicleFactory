@@ -2,6 +2,10 @@ package bus;
 
 public class GasVehicle extends Vehicle{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private float fuelConsumed;
 
     public GasVehicle(){

@@ -2,6 +2,10 @@ package bus;
 
 public class ElectricVehicle extends Vehicle{
 
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private float kilowattsPowerConsumed;
     
     public ElectricVehicle(){
